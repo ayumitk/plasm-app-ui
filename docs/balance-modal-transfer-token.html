@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Plasm App UI</title>
+  <meta name="description" content="">
+</head>
+
+<body>
+  <div class="h-screen flex overflow-hidden bg-gray-50 dark:bg-darkGray-900">
+
+    <!-- Off-canvas menu for mobile -->
+<div class="hidden">
+  <div class="fixed inset-0 flex z-40">
+    <div class="fixed inset-0">
+      <div class="absolute inset-0 bg-gray-900 dark:bg-black opacity-75"></div>
+    </div>
+    <div
+      class="relative flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-darkGray-800 overflow-y-auto overflow-x-hidden">
+      <div class="absolute top-0 right-0 -mr-12 pt-2">
+        <button
+          class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6 text-white dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex flex-col pt-10 lg:overflow-y-auto">
+
+  <div class="flex items-center justify-center flex-shrink-0">
+    <img class="w-10 h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <div class="p-4">
+    <button type="button"
+      class="inline-flex justify-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-4 py-3 bg-white dark:bg-darkGray-900 text-xs font-medium text-gray-700 dark:text-darkGray-100 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+      Plasm Network (Mainnet)
+      <!-- Heroicon name: solid/chevron-down -->
+      <svg class=" -mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        aria-hidden="true">
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1">
+  <!--
+    Current: "bg-blue-50 text-blue-500",
+    Default: "text-gray-500 hover:bg-gray-50 dark:hover:bg-dark-gray-800 hover:text-gray-700"
+  -->
+  <a href="#"
+    class="bg-blue-200 dark:bg-blue-500 bg-opacity-20 dark:text-white text-blue-500 group flex px-4 py-6 border-r-4 border-blue-500 cursor-default">
+    <!--
+      Current: "text-blue-500",
+      Default: "text-gray-500 group-hover:text-gray-700"
+    -->
+    <!-- original icon -->
+    <svg class="text-blue-500 dark:text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16.04" cy="13.76" r="1.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M19.21,7.5l.69-.06c0-.53,0-1.32,0-1.63a1.69,1.69,0,0,0-1.69-1.69H5.25A2.26,2.26,0,0,0,3,6.38V17.62a2.26,2.26,0,0,0,2.25,2.26h14A1.74,1.74,0,0,0,21,18.19v-9A1.74,1.74,0,0,0,19.21,7.5Z" />
+      <line stroke="currentColor" stroke-width="2" x1="19.9" y1="7.5" x2="6.63" y2="7.5" />
+    </svg>
+    <span class="ml-3 flex-1">
+      <p class="font-bold">Balance</p>
+      <p class="text-xs text-blue-900 dark:text-darkGray-100 font-semibold flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400">5Hn8MM......2dZzwc</p>
+    </span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M10.1,18.92l-5-5S8,0,21.93,2.07C24,16,10.1,18.92,10.1,18.92Z" />
+      <line stroke="currentColor" stroke-width="2" x1="7" y1="11.26" x2="13.2" y2="17.45" />
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16" cy="8.07" r="2.5" />
+      <line stroke="currentColor" stroke-width="2" x1="2.58" y1="21.49" x2="5.58" y2="18.49" />
+      <line stroke="currentColor" stroke-width="2" x1="1.71" y1="18.59" x2="3.71" y2="16.59" />
+      <line stroke="currentColor" stroke-width="2" x1="5.57" y1="22.59" x2="7.57" y2="20.59" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="8.26 7.26 4.41 7.71 1.53 12.15 5.42 12.81" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none"
+        points="16.41 16 16.07 19.59 11.85 22.59 11.17 18.62" />
+    </svg>
+    <span class="ml-3 flex-1">dApps</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M21.1,5.88l-.66,0A12.6,12.6,0,0,1,12,2.67,12.6,12.6,0,0,1,3.56,5.9l-.66,0a12.83,12.83,0,0,0-.4,3.18A12.68,12.68,0,0,0,12,21.33,12.68,12.68,0,0,0,21.5,9.06,12.83,12.83,0,0,0,21.1,5.88Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,16h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,12.22h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="7.15" x2="12.51" y2="8.36" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="16.12" x2="12.51" y2="17.32" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="8.49" x2="10.14" y2="8.49" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="15.99" x2="10.14" y2="15.99" />
+    </svg>
+    <span class="ml-3 flex-1">Staking</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- Heroicon name: outline/lock-closed -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+    <span class="ml-3 flex-1">DOT Lockdrop</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="12 8 12 12 15 15" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="4.14 2.5 4.14 7.5 4.72 7.5" />
+      <line stroke="currentColor" stroke-width="2" x1="4.72" y1="7.5" x2="9.14" y2="7.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none" d="M4.21,16.5a9,9,0,1,0,0-9" />
+    </svg>
+    <span class="ml-3 flex-1">History</span>
+  </a>
+
+</nav>
+
+</div>
+
+<div class="flex-shrink-0 p-4 border-t border-gray-200 dark:border-darkGray-600">
+  <div class="flex items-center">
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Twitter
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Telegram
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Discord
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+      <path fill="currentColor"
+        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Github
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- Heroicon name: outline/document-text -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Documentation
+    </span>
+  </a>
+
+</div>
+    <div class="flex items-center">
+
+  <button type="button" class="tooltip p-3 rounded-full relative focus:outline-none cursor-default">
+    <!-- Heroicon name: outline/sun -->
+    <svg class="text-blue-900 dark:text-darkGray-100 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Light mode
+    </span>
+  </button>
+
+  <span class="text-gray-300 dark:text-darkGray-500">/</span>
+
+  <button type="button"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group">
+    <!-- Heroicon name: outline/moon -->
+    <svg
+      class="text-gray-300 dark:text-darkGray-500 h-5 w-5 group-hover:text-blue-900 dark:group-hover:text-darkGray-300"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Dark mode
+    </span>
+  </button>
+
+</div>
+</div>
+    </div>
+    <div class="flex-shrink-0 w-14">
+      <!-- Force sidebar to shrink to fit close icon -->
+    </div>
+  </div>
+</div>
+
+      <!-- Static sidebar for desktop -->
+<div class="hidden lg:flex lg:flex-shrink-0">
+  <div class="flex flex-col w-64">
+    <div class="flex flex-col h-0 flex-1 shadow bg-white dark:bg-darkGray-800">
+      <div class="flex-1 flex flex-col pt-10 lg:overflow-y-auto">
+
+  <div class="flex items-center justify-center flex-shrink-0">
+    <img class="w-10 h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <div class="p-4">
+    <button type="button"
+      class="inline-flex justify-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-4 py-3 bg-white dark:bg-darkGray-900 text-xs font-medium text-gray-700 dark:text-darkGray-100 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+      Plasm Network (Mainnet)
+      <!-- Heroicon name: solid/chevron-down -->
+      <svg class=" -mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        aria-hidden="true">
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1">
+  <!--
+    Current: "bg-blue-50 text-blue-500",
+    Default: "text-gray-500 hover:bg-gray-50 dark:hover:bg-dark-gray-800 hover:text-gray-700"
+  -->
+  <a href="#"
+    class="bg-blue-200 dark:bg-blue-500 bg-opacity-20 dark:text-white text-blue-500 group flex px-4 py-6 border-r-4 border-blue-500 cursor-default">
+    <!--
+      Current: "text-blue-500",
+      Default: "text-gray-500 group-hover:text-gray-700"
+    -->
+    <!-- original icon -->
+    <svg class="text-blue-500 dark:text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16.04" cy="13.76" r="1.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M19.21,7.5l.69-.06c0-.53,0-1.32,0-1.63a1.69,1.69,0,0,0-1.69-1.69H5.25A2.26,2.26,0,0,0,3,6.38V17.62a2.26,2.26,0,0,0,2.25,2.26h14A1.74,1.74,0,0,0,21,18.19v-9A1.74,1.74,0,0,0,19.21,7.5Z" />
+      <line stroke="currentColor" stroke-width="2" x1="19.9" y1="7.5" x2="6.63" y2="7.5" />
+    </svg>
+    <span class="ml-3 flex-1">
+      <p class="font-bold">Balance</p>
+      <p class="text-xs text-blue-900 dark:text-darkGray-100 font-semibold flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400">5Hn8MM......2dZzwc</p>
+    </span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M10.1,18.92l-5-5S8,0,21.93,2.07C24,16,10.1,18.92,10.1,18.92Z" />
+      <line stroke="currentColor" stroke-width="2" x1="7" y1="11.26" x2="13.2" y2="17.45" />
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16" cy="8.07" r="2.5" />
+      <line stroke="currentColor" stroke-width="2" x1="2.58" y1="21.49" x2="5.58" y2="18.49" />
+      <line stroke="currentColor" stroke-width="2" x1="1.71" y1="18.59" x2="3.71" y2="16.59" />
+      <line stroke="currentColor" stroke-width="2" x1="5.57" y1="22.59" x2="7.57" y2="20.59" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="8.26 7.26 4.41 7.71 1.53 12.15 5.42 12.81" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none"
+        points="16.41 16 16.07 19.59 11.85 22.59 11.17 18.62" />
+    </svg>
+    <span class="ml-3 flex-1">dApps</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M21.1,5.88l-.66,0A12.6,12.6,0,0,1,12,2.67,12.6,12.6,0,0,1,3.56,5.9l-.66,0a12.83,12.83,0,0,0-.4,3.18A12.68,12.68,0,0,0,12,21.33,12.68,12.68,0,0,0,21.5,9.06,12.83,12.83,0,0,0,21.1,5.88Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,16h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,12.22h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="7.15" x2="12.51" y2="8.36" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="16.12" x2="12.51" y2="17.32" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="8.49" x2="10.14" y2="8.49" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="15.99" x2="10.14" y2="15.99" />
+    </svg>
+    <span class="ml-3 flex-1">Staking</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- Heroicon name: outline/lock-closed -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+    <span class="ml-3 flex-1">DOT Lockdrop</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="12 8 12 12 15 15" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="4.14 2.5 4.14 7.5 4.72 7.5" />
+      <line stroke="currentColor" stroke-width="2" x1="4.72" y1="7.5" x2="9.14" y2="7.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none" d="M4.21,16.5a9,9,0,1,0,0-9" />
+    </svg>
+    <span class="ml-3 flex-1">History</span>
+  </a>
+
+</nav>
+
+</div>
+
+<div class="flex-shrink-0 p-4 border-t border-gray-200 dark:border-darkGray-600">
+  <div class="flex items-center">
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Twitter
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Telegram
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Discord
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+      <path fill="currentColor"
+        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Github
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- Heroicon name: outline/document-text -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Documentation
+    </span>
+  </a>
+
+</div>
+    <div class="flex items-center">
+
+  <button type="button" class="tooltip p-3 rounded-full relative focus:outline-none cursor-default">
+    <!-- Heroicon name: outline/sun -->
+    <svg class="text-blue-900 dark:text-darkGray-100 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Light mode
+    </span>
+  </button>
+
+  <span class="text-gray-300 dark:text-darkGray-500">/</span>
+
+  <button type="button"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group">
+    <!-- Heroicon name: outline/moon -->
+    <svg
+      class="text-gray-300 dark:text-darkGray-500 h-5 w-5 group-hover:text-blue-900 dark:group-hover:text-darkGray-300"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Dark mode
+    </span>
+  </button>
+
+</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+        <div class="flex flex-col w-0 flex-1 overflow-y-auto lg:overflow-hidden">
+
+          <div class="flex justify-between items-center lg:hidden px-4 py-1 sm:py-2 bg-white dark:bg-darkGray-800 shadow">
+
+  <button
+    class="-ml-3 p-2 rounded-full hover:bg-blue-100 dark:hover:bg-darkGray-600 hover:text-gray-900 focus:outline-none focus:ring focus:ring-blue-100 focus:bg-blue-50 group">
+    <span class="sr-only">Open sidebar</span>
+    <!-- Heroicon name: outline/menu -->
+    <svg class="h-6 w-6 text-gray-500 dark:text-darkGray-300 group-hover:text-blue-900"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <div class="flex items-center justify-center">
+    <img class="w-8 h-8 sm:w-10 sm:h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <button type="button"
+    class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-gray-100 focus:outline-none focus:ring focus:ring-blue-100">
+    <svg class="h-full w-full" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+      <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+    </svg>
+  </button>
+
+</div>
+
+            <main class="flex-1 relative z-0 lg:overflow-y-auto focus:outline-none">
+
+
+              <div class="px-4 py-10 md:px-8">
+
+                <div class="flex justify-between">
+                  <h1 class="text-2xl font-extrabold text-blue-900 dark:text-white mb-2">Balance</h1>
+                  <div class="hidden sm:block">
+  <button type="button"
+    class="inline-flex items-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-2 py-2 bg-white dark:bg-darkGray-900 text-xs font-medium hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+    <div class="h-8 w-8 rounded-full overflow-hidden border border-gray-100 mr-2">
+      <svg class="h-full w-full" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+        <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+      </svg>
+    </div>
+    <div class="text-left">
+      <p class="text-blue-900 dark:text-darkGray-100 font-semibold leading-tight flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400 font-normal leading-tight">
+        5Hn8MM......2dZzwc
+      </p>
+    </div>
+    <!-- Heroicon name: solid/chevron-down -->
+    <svg class="mr-1 ml-2 h-4 w-4 dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+      fill="currentColor" aria-hidden="true">
+      <path fill-rule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+</div>
+                </div>
+
+                <div class="border-b border-gray-200 dark:border-darkGray-600 mb-6">
+  <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+    <!--
+      Current: "border-blue-500 text-blue-600",
+      Default: "border-transparent text-gray-500 hover:border-gray-300"
+    -->
+    <a href="#"
+      class="border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 whitespace-nowrap py-4 px-1 border-b-2 font-medium"
+      aria-current="page">
+      Plasm
+    </a>
+    <a href="#"
+      class="border-transparent text-gray-500 dark:text-darkGray-400 hover:border-gray-300 dark:hover:border-darkGray-500 whitespace-nowrap py-4 px-1 border-b-2 font-normal">
+      Cross-chain
+    </a>
+  </nav>
+</div>
+
+                  <div class="grid lg:grid-cols-2 gap-4 mb-4">
+                    <div class="relative z-0 inline-flex shadow rounded-lg bg-white dark:bg-darkGray-800">
+
+  <div class="relative inline-flex items-center py-4 px-1 sm:py-5 sm:px-2 rounded-l-lg flex-1 text-left">
+    <div class="flex items-center">
+      <div class="h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden border border-gray-100 mx-2 sm:mx-3">
+        <svg class="h-full w-full" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+          <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+        </svg>
+      </div>
+      <div>
+        <p class="text-blue-900 dark:text-darkGray-100 font-bold">AddressName</p>
+        <p class="text-xs text-gray-500 dark:text-darkGray-400">5Hn8MM......2dZzwc</p>
+      </div>
+    </div>
+
+    <button type="button"
+      class="tooltip ml-auto p-4 sm:p-5 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+      <!-- Heroicon name: outline/chevron-down -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+        Change
+      </span>
+    </button>
+
+  </div>
+
+  <div class="border-l border-gray-100 dark:border-darkGray-600 flex items-center px-1 md:px-2">
+    <button type="button"
+      class="tooltip p-4 sm:p-5 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative before:content after:content group">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Copy
+      </span>
+    </button>
+  </div>
+
+</div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-blue-500 dark:bg-blue-800 text-white overflow-hidden shadow rounded-lg px-5 pt-8 pb-10 sm:pb-0">
+  <p class="text-lg font-bold mb-4 sm:mb-12 lg:mb-10">Total Balance</p>
+  <p class="font-semibold text-center mb-2"><span class="text-3xl">≈US $</span><span
+      class="text-4xl tracking-tight leading-tight">120</span></p>
+  <p class="text-xs text-center">
+    <span class="text-red-300 dark:text-red-400">-$698.68 (3.14%)</span>
+    <span class="text-red-300 dark:text-red-400">
+      <!-- Heroicon name: outline/trending-down -->
+      <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+      </svg>
+    </span>
+    <span>24h</span>
+  </p>
+  <p class="text-xs text-center">
+    <span class="text-green-300 dark:text-green-400">+$698.68 (3.14%)</span>
+    <span class="text-green-300 dark:text-green-400">
+      <!-- Heroicon name: outline/trending-up -->
+      <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    </span>
+    <span>24h</span>
+  </p>
+</div>
+                      <div
+  class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg sm:col-span-2 text-blue-900 dark:text-darkGray-100 p-5 sm:grid grid-cols-2 gap-4">
+
+  <div>
+    <div class="flex items-center">
+      <div class="h-10 w-10 rounded-full overflow-hidden border border-gray-100 mr-2">
+        <svg class="h-full w-full" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+          <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+          <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+          <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+        </svg>
+      </div>
+      <p class="text-blue-900 dark:text-darkGray-100 font-bold text-lg">PLM Balance</p>
+    </div>
+
+    <div class="flex justify-center mt-4 sm:mt-8 lg:mt-6">
+      <div>
+        <p class="font-semibold text-center"><span class="text-4xl tracking-tight leading-tight">1,200</span><span
+            class="text-2xl">PLM</span></p>
+        <p class="text-right text-gray-500 dark:text-darkGray-400 mb-2 text-sm">≈US $120</p>
+      </div>
+    </div>
+
+    <p class="text-xs text-center">
+      <span class="text-red-500 dark:text-red-400">-$698.68 (3.14%)</span>
+      <span class="text-red-500 dark:text-red-400">
+        <!-- Heroicon name: outline/trending-down -->
+        <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+        </svg>
+      </span>
+      <span class="text-gray-500 dark:text-darkGray-400">24h</span>
+    </p>
+    <p class="text-xs text-center">
+      <span class="text-green-500">+$698.68 (3.14%)</span>
+      <span class="text-green-500">
+        <!-- Heroicon name: outline/trending-up -->
+        <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      </span>
+      <span class="text-gray-500 dark:text-darkGray-400">24h</span>
+    </p>
+
+    <div class="mt-3 text-center mb-6 sm:mb-0">
+      <button type="button"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400 mx-0.5">
+        Transfer
+      </button>
+      <button type="button"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 hover:bg-blue-100 dark:hover:bg-darkGray-800 dark:hover:border-blue-300 dark:hover:text-blue-300 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400 mx-0.5">
+        Staking
+      </button>
+    </div>
+
+  </div>
+
+  <div class="text-sm">
+    <div class="flex justify-between items-center bg-blue-50 dark:bg-darkGray-700 rounded-lg mb-2 py-3 px-4">
+      <div>Transferable</div>
+      <div>
+        <p class="font-bold text-right"><span class="text-2xl leading-tight">100</span>PLM</p>
+        <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+      </div>
+    </div>
+    <div class="flex justify-between items-center bg-blue-50 dark:bg-darkGray-700 rounded-lg mb-2 py-3 px-4">
+      <div>dApps staking</div>
+      <div>
+        <p class="font-bold text-right"><span class="text-2xl leading-tight">100</span>PLM</p>
+        <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+      </div>
+    </div>
+    <div class="flex justify-between items-center bg-blue-50 dark:bg-darkGray-700 rounded-lg py-3 px-4">
+      <div>Transferable</div>
+      <div>
+        <p class="font-bold text-right"><span class="text-2xl leading-tight">100</span>PLM</p>
+        <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+                  </div>
+
+                  <h2 class="text-blue-900 dark:text-white text-lg font-extrabold my-3">Tokens</h2>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg p-5">
+
+  <div class="flex justify-between">
+
+    <div class="flex items-center">
+      <div class="h-10 w-10 rounded-full overflow-hidden mr-2">
+        <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+      </div>
+      <div>
+        <p class="text-blue-900 dark:text-darkGray-100 font-bold text-lg leading-tight">ACA</p>
+        <p class="text-gray-500 dark:text-darkGray-400 text-xs">Acala</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="font-bold text-blue-900 dark:text-darkGray-100 text-right"><span
+          class="text-2xl leading-tight">100</span>PLM</p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+    </div>
+
+  </div>
+
+  <p class="text-xs text-center mb-2 text-right">
+    <span class="text-green-500">+$698.68 (3.14%)</span>
+    <span class="text-green-500">
+      <!-- Heroicon name: outline/trending-up -->
+      <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    </span>
+    <span class="text-gray-500 dark:text-darkGray-400">24h</span>
+  </p>
+
+  <div class="text-center">
+    <button type="button"
+      class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      Transfer
+    </button>
+  </div>
+
+</div>
+                      <div class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg p-5">
+
+  <div class="flex justify-between">
+
+    <div class="flex items-center">
+      <div class="h-10 w-10 rounded-full overflow-hidden mr-2">
+        <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+      </div>
+      <div>
+        <p class="text-blue-900 dark:text-darkGray-100 font-bold text-lg leading-tight">ACA</p>
+        <p class="text-gray-500 dark:text-darkGray-400 text-xs">Acala</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="font-bold text-blue-900 dark:text-darkGray-100 text-right"><span
+          class="text-2xl leading-tight">100</span>PLM</p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+    </div>
+
+  </div>
+
+  <p class="text-xs text-center mb-2 text-right">
+    <span class="text-green-500">+$698.68 (3.14%)</span>
+    <span class="text-green-500">
+      <!-- Heroicon name: outline/trending-up -->
+      <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    </span>
+    <span class="text-gray-500 dark:text-darkGray-400">24h</span>
+  </p>
+
+  <div class="text-center">
+    <button type="button"
+      class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      Transfer
+    </button>
+  </div>
+
+</div>
+                        <div class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg p-5">
+
+  <div class="flex justify-between">
+
+    <div class="flex items-center">
+      <div class="h-10 w-10 rounded-full overflow-hidden mr-2">
+        <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+      </div>
+      <div>
+        <p class="text-blue-900 dark:text-darkGray-100 font-bold text-lg leading-tight">ACA</p>
+        <p class="text-gray-500 dark:text-darkGray-400 text-xs">Acala</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="font-bold text-blue-900 dark:text-darkGray-100 text-right"><span
+          class="text-2xl leading-tight">100</span>PLM</p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400 text-right">≈US $10</p>
+    </div>
+
+  </div>
+
+  <p class="text-xs text-center mb-2 text-right">
+    <span class="text-green-500">+$698.68 (3.14%)</span>
+    <span class="text-green-500">
+      <!-- Heroicon name: outline/trending-up -->
+      <svg class="w-4 h-4 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    </span>
+    <span class="text-gray-500 dark:text-darkGray-400">24h</span>
+  </p>
+
+  <div class="text-center">
+    <button type="button"
+      class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      Transfer
+    </button>
+  </div>
+
+</div>
+                  </div>
+
+              </div>
+
+            </main>
+        </div>
+  </div>
+
+  <div class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen">
+
+    <!-- Background overlay -->
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-900 dark:bg-black opacity-75"></div>
+    </div>
+
+    <div
+      class="inline-block align-bottom bg-white dark:bg-darkGray-900 rounded-lg px-4 sm:px-8 py-10 overflow-hidden shadow-xl transform transition-all mx-2 my-2 align-middle max-w-lg w-full">
+      <div>
+
+        <div>
+
+          <h3 class="text-lg font-extrabold text-blue-900 dark:text-white mb-6 text-center">
+            Transfer XXX
+          </h3>
+
+          <button type="button"
+            class="w-full bg-blue-500 dark:bg-blue-800 text-white rounded-lg px-5 py-5 mb-4 relative hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+            <span class="block text-left font-bold text-sm mb-2">XXX Balance</span>
+            <span class="block font-semibold text-2xl mb-1">0 XXX</span>
+            <span class="block font-normal text-sm mb-2">≈US $0</span>
+            <!-- Heroicon name: solid/chevron-down -->
+            <svg class="h-6 w-6 dark:text-darkGray-300 absolute top-1/2 right-5 -mt-2"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <fieldset>
+            <ul role="radiogroup" class="grid grid-cols-3 gap-2">
+
+              <!-- on -->
+              <li>
+                <label
+                  class="rounded-lg border border-blue-500 bg-blue-200 dark:bg-blue-500 bg-opacity-10 px-4 py-5 cursor-pointer relative block text-center">
+                  <div class="h-10 w-10 rounded-full overflow-hidden mx-auto mb-2">
+                    <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+                  </div>
+                  <div>
+                    <p class="text-blue-500 dark:text-blue-400 font-bold text-lg leading-tight">ACA</p>
+                    <p class="text-gray-500 dark:text-darkGray-400 text-xs">Acala</p>
+                  </div>
+                  <div class="bg-blue-500 rounded-full p-1 absolute top-2 right-2">
+                    <!-- Heroicon name: outline/check -->
+                    <svg class="h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </label>
+              </li>
+
+              <!-- off -->
+              <li>
+                <label
+                  class="rounded-lg border border-gray-300 dark:border-darkGray-600 bg-white dark:bg-darkGray-900 hover:bg-gray-50 dark:hover:bg-darkGray-800 px-4 py-5 cursor-pointer group relative block text-center">
+                  <div class="h-10 w-10 rounded-full overflow-hidden mx-auto mb-2">
+                    <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+                  </div>
+                  <div>
+                    <p
+                      class="text-blue-900 dark:text-darkGray-400 dark:group-hover:text-darkGray-100 font-bold text-lg leading-tight">
+                      ACA</p>
+                    <p class="text-gray-500 dark:text-darkGray-500 dark:group-hover:text-darkGray-400 text-xs">Acala</p>
+                  </div>
+                </label>
+              </li>
+
+              <li>
+                <label
+                  class="rounded-lg border border-gray-300 dark:border-darkGray-600 bg-white dark:bg-darkGray-900 hover:bg-gray-50 dark:hover:bg-darkGray-800 px-4 py-5 cursor-pointer group relative block text-center">
+                  <div class="h-10 w-10 rounded-full overflow-hidden mx-auto mb-2">
+                    <img src="images/ACA.96bf6b59.svg" class="h-full w-full">
+                  </div>
+                  <div>
+                    <p
+                      class="text-blue-900 dark:text-darkGray-400 dark:group-hover:text-darkGray-100 font-bold text-lg leading-tight">
+                      ACA</p>
+                    <p class="text-gray-500 dark:text-darkGray-500 dark:group-hover:text-darkGray-400 text-xs">Acala</p>
+                  </div>
+                </label>
+              </li>
+
+            </ul>
+          </fieldset>
+
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-6 flex justify-center flex-row-reverse">
+        <button type="button"
+          class="inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400 mx-1">
+          Confirm
+        </button>
+        <button type="button"
+          class="inline-flex items-center px-6 py-2 border border-gray-300 dark:border-darkGray-600 text-sm font-medium rounded-full text-gray-500 dark:text-darkGray-400 dark:text-darkGray-400 bg-white dark:bg-darkGray-900 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 mx-1">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

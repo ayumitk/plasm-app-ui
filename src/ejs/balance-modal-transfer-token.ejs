@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Plasm App UI</title>
+  <meta name="description" content="">
+</head>
+
+<body>
+  <div class="h-screen flex overflow-hidden bg-gray-50 dark:bg-darkGray-900">
+
+    <%- include('./components/common/_sidebar-mobile'); -%>
+
+      <%- include('./components/common/_sidebar-desktop'); -%>
+
+
+
+        <div class="flex flex-col w-0 flex-1 overflow-y-auto lg:overflow-hidden">
+
+          <%- include('./components/common/_header-mobile'); -%>
+
+            <main class="flex-1 relative z-0 lg:overflow-y-auto focus:outline-none">
+
+
+              <div class="px-4 py-10 md:px-8">
+
+                <div class="flex justify-between">
+                  <h1 class="text-2xl font-extrabold text-blue-900 dark:text-white mb-2">Balance</h1>
+                  <%- include('./components/common/_address-change'); -%>
+                </div>
+
+                <%- include('./components/balance/_tab'); -%>
+
+                  <div class="grid lg:grid-cols-2 gap-4 mb-4">
+                    <%- include('./components/balance/_address'); -%>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <%- include('./components/balance/_total-balance'); -%>
+                      <%- include('./components/balance/_plm-balance'); -%>
+                  </div>
+
+                  <h2 class="text-blue-900 dark:text-white text-lg font-extrabold my-3">Tokens</h2>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <%- include('./components/balance/_token'); -%>
+                      <%- include('./components/balance/_token'); -%>
+                        <%- include('./components/balance/_token'); -%>
+                  </div>
+
+              </div>
+
+            </main>
+        </div>
+  </div>
+
+  <%- include('./components/balance/_modal-transfer-token'); -%>
+</body>
+
+</html>
