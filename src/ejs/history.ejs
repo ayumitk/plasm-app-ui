@@ -33,6 +33,31 @@
                   <%- include('./components/common/_address-change'); -%>
                 </div>
 
+                <div class="sm:flex justify-between items-center my-8">
+                  <div class="flex-1 relative mb-2 sm:mb-0">
+                    <input type="text" name="search" placeholder="Find by address, protocol, asset or type..."
+                      class="max-w-xl w-full block border border-gray-300 dark:border-darkGray-500 dark:bg-darkGray-800 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md py-2.5 pl-10 pr-2.5 placeholder-gray-500 dark:placeholder-darkGray-500 text-blue-900 dark:text-darkGray-100 focus:outline-none ">
+                    <div class="absolute top-0 left-0 p-3">
+                      <svg class="w-5 h-5 text-gray-500 dark:text-darkGray-400" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="sm:ml-4">
+                    <button type="button"
+                      class="inline-flex items-center pl-4 pr-6 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+                      <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      Download CSV
+                    </button>
+                  </div>
+                </div>
+
                 <h2 class="text-blue-900 dark:text-white text-sm font-bold my-3">September 17, 2020</h2>
 
                 <div class="flex flex-col mb-8">
