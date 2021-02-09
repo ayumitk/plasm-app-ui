@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Plasm App UI</title>
+  <meta name="description" content="">
+</head>
+
+<body>
+  <div class="h-screen flex overflow-hidden bg-gray-50 dark:bg-darkGray-900">
+
+    <!-- Off-canvas menu for mobile -->
+<div class="hidden">
+  <div class="fixed inset-0 flex z-40">
+    <div class="fixed inset-0">
+      <div class="absolute inset-0 bg-gray-900 dark:bg-black opacity-75"></div>
+    </div>
+    <div
+      class="relative flex-1 flex flex-col max-w-xs w-full bg-white dark:bg-darkGray-800 overflow-y-auto overflow-x-hidden">
+      <div class="absolute top-0 right-0 -mr-12 pt-2">
+        <button
+          class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Close sidebar</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6 text-white dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex flex-col pt-10 lg:overflow-y-auto">
+
+  <div class="flex items-center justify-center flex-shrink-0">
+    <img class="w-10 h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <div class="p-4">
+    <button type="button"
+      class="inline-flex justify-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-4 py-3 bg-white dark:bg-darkGray-900 text-xs font-medium text-gray-700 dark:text-darkGray-100 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+      Plasm Network (Mainnet)
+      <!-- Heroicon name: solid/chevron-down -->
+      <svg class=" -mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        aria-hidden="true">
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1">
+  <!--
+    Current: "bg-blue-50 text-blue-500",
+    Default: "text-gray-500 hover:bg-gray-50 dark:hover:bg-dark-gray-800 hover:text-gray-700"
+  -->
+  <a href="#"
+    class="bg-blue-200 dark:bg-blue-500 bg-opacity-20 dark:text-white text-blue-500 group flex px-4 py-6 border-r-4 border-blue-500 cursor-default">
+    <!--
+      Current: "text-blue-500",
+      Default: "text-gray-500 group-hover:text-gray-700"
+    -->
+    <!-- original icon -->
+    <svg class="text-blue-500 dark:text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16.04" cy="13.76" r="1.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M19.21,7.5l.69-.06c0-.53,0-1.32,0-1.63a1.69,1.69,0,0,0-1.69-1.69H5.25A2.26,2.26,0,0,0,3,6.38V17.62a2.26,2.26,0,0,0,2.25,2.26h14A1.74,1.74,0,0,0,21,18.19v-9A1.74,1.74,0,0,0,19.21,7.5Z" />
+      <line stroke="currentColor" stroke-width="2" x1="19.9" y1="7.5" x2="6.63" y2="7.5" />
+    </svg>
+    <span class="ml-3 flex-1">
+      <p class="font-bold">Balance</p>
+      <p class="text-xs text-blue-900 dark:text-darkGray-100 font-semibold flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400">5Hn8MM......2dZzwc</p>
+    </span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M10.1,18.92l-5-5S8,0,21.93,2.07C24,16,10.1,18.92,10.1,18.92Z" />
+      <line stroke="currentColor" stroke-width="2" x1="7" y1="11.26" x2="13.2" y2="17.45" />
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16" cy="8.07" r="2.5" />
+      <line stroke="currentColor" stroke-width="2" x1="2.58" y1="21.49" x2="5.58" y2="18.49" />
+      <line stroke="currentColor" stroke-width="2" x1="1.71" y1="18.59" x2="3.71" y2="16.59" />
+      <line stroke="currentColor" stroke-width="2" x1="5.57" y1="22.59" x2="7.57" y2="20.59" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="8.26 7.26 4.41 7.71 1.53 12.15 5.42 12.81" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none"
+        points="16.41 16 16.07 19.59 11.85 22.59 11.17 18.62" />
+    </svg>
+    <span class="ml-3 flex-1">dApps</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M21.1,5.88l-.66,0A12.6,12.6,0,0,1,12,2.67,12.6,12.6,0,0,1,3.56,5.9l-.66,0a12.83,12.83,0,0,0-.4,3.18A12.68,12.68,0,0,0,12,21.33,12.68,12.68,0,0,0,21.5,9.06,12.83,12.83,0,0,0,21.1,5.88Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,16h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,12.22h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="7.15" x2="12.51" y2="8.36" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="16.12" x2="12.51" y2="17.32" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="8.49" x2="10.14" y2="8.49" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="15.99" x2="10.14" y2="15.99" />
+    </svg>
+    <span class="ml-3 flex-1">Staking</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- Heroicon name: outline/lock-closed -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+    <span class="ml-3 flex-1">DOT Lockdrop</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="12 8 12 12 15 15" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="4.14 2.5 4.14 7.5 4.72 7.5" />
+      <line stroke="currentColor" stroke-width="2" x1="4.72" y1="7.5" x2="9.14" y2="7.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none" d="M4.21,16.5a9,9,0,1,0,0-9" />
+    </svg>
+    <span class="ml-3 flex-1">History</span>
+  </a>
+
+</nav>
+
+</div>
+
+<div class="flex-shrink-0 p-4 border-t border-gray-200 dark:border-darkGray-600">
+  <div class="flex items-center">
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Twitter
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Telegram
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Discord
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+      <path fill="currentColor"
+        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Github
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- Heroicon name: outline/document-text -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Documentation
+    </span>
+  </a>
+
+</div>
+    <div class="flex items-center">
+
+  <button type="button" class="tooltip p-3 rounded-full relative focus:outline-none cursor-default">
+    <!-- Heroicon name: outline/sun -->
+    <svg class="text-blue-900 dark:text-darkGray-100 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Light mode
+    </span>
+  </button>
+
+  <span class="text-gray-300 dark:text-darkGray-500">/</span>
+
+  <button type="button"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group">
+    <!-- Heroicon name: outline/moon -->
+    <svg
+      class="text-gray-300 dark:text-darkGray-500 h-5 w-5 group-hover:text-blue-900 dark:group-hover:text-darkGray-300"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Dark mode
+    </span>
+  </button>
+
+</div>
+</div>
+    </div>
+    <div class="flex-shrink-0 w-14">
+      <!-- Force sidebar to shrink to fit close icon -->
+    </div>
+  </div>
+</div>
+
+      <!-- Static sidebar for desktop -->
+<div class="hidden lg:flex lg:flex-shrink-0">
+  <div class="flex flex-col w-64">
+    <div class="flex flex-col h-0 flex-1 shadow bg-white dark:bg-darkGray-800">
+      <div class="flex-1 flex flex-col pt-10 lg:overflow-y-auto">
+
+  <div class="flex items-center justify-center flex-shrink-0">
+    <img class="w-10 h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <div class="p-4">
+    <button type="button"
+      class="inline-flex justify-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-4 py-3 bg-white dark:bg-darkGray-900 text-xs font-medium text-gray-700 dark:text-darkGray-100 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+      Plasm Network (Mainnet)
+      <!-- Heroicon name: solid/chevron-down -->
+      <svg class=" -mr-1 ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        aria-hidden="true">
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1">
+  <!--
+    Current: "bg-blue-50 text-blue-500",
+    Default: "text-gray-500 hover:bg-gray-50 dark:hover:bg-dark-gray-800 hover:text-gray-700"
+  -->
+  <a href="#"
+    class="bg-blue-200 dark:bg-blue-500 bg-opacity-20 dark:text-white text-blue-500 group flex px-4 py-6 border-r-4 border-blue-500 cursor-default">
+    <!--
+      Current: "text-blue-500",
+      Default: "text-gray-500 group-hover:text-gray-700"
+    -->
+    <!-- original icon -->
+    <svg class="text-blue-500 dark:text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16.04" cy="13.76" r="1.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M19.21,7.5l.69-.06c0-.53,0-1.32,0-1.63a1.69,1.69,0,0,0-1.69-1.69H5.25A2.26,2.26,0,0,0,3,6.38V17.62a2.26,2.26,0,0,0,2.25,2.26h14A1.74,1.74,0,0,0,21,18.19v-9A1.74,1.74,0,0,0,19.21,7.5Z" />
+      <line stroke="currentColor" stroke-width="2" x1="19.9" y1="7.5" x2="6.63" y2="7.5" />
+    </svg>
+    <span class="ml-3 flex-1">
+      <p class="font-bold">Balance</p>
+      <p class="text-xs text-blue-900 dark:text-darkGray-100 font-semibold flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400">5Hn8MM......2dZzwc</p>
+    </span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M10.1,18.92l-5-5S8,0,21.93,2.07C24,16,10.1,18.92,10.1,18.92Z" />
+      <line stroke="currentColor" stroke-width="2" x1="7" y1="11.26" x2="13.2" y2="17.45" />
+      <circle stroke="currentColor" stroke-width="2" fill="none" cx="16" cy="8.07" r="2.5" />
+      <line stroke="currentColor" stroke-width="2" x1="2.58" y1="21.49" x2="5.58" y2="18.49" />
+      <line stroke="currentColor" stroke-width="2" x1="1.71" y1="18.59" x2="3.71" y2="16.59" />
+      <line stroke="currentColor" stroke-width="2" x1="5.57" y1="22.59" x2="7.57" y2="20.59" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="8.26 7.26 4.41 7.71 1.53 12.15 5.42 12.81" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none"
+        points="16.41 16 16.07 19.59 11.85 22.59 11.17 18.62" />
+    </svg>
+    <span class="ml-3 flex-1">dApps</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M21.1,5.88l-.66,0A12.6,12.6,0,0,1,12,2.67,12.6,12.6,0,0,1,3.56,5.9l-.66,0a12.83,12.83,0,0,0-.4,3.18A12.68,12.68,0,0,0,12,21.33,12.68,12.68,0,0,0,21.5,9.06,12.83,12.83,0,0,0,21.1,5.88Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,16h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <path stroke="currentColor" stroke-width="2" fill="none"
+        d="M9.59,12.22h3.75a1.87,1.87,0,0,0,.44-3.72,1.62,1.62,0,0,0-.44,0H9.59Z" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="7.15" x2="12.51" y2="8.36" />
+      <line stroke="currentColor" stroke-width="2" x1="12.51" y1="16.12" x2="12.51" y2="17.32" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="8.49" x2="10.14" y2="8.49" />
+      <line stroke="currentColor" stroke-width="2" x1="8.57" y1="15.99" x2="10.14" y2="15.99" />
+    </svg>
+    <span class="ml-3 flex-1">Staking</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- Heroicon name: outline/lock-closed -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+    <span class="ml-3 flex-1">DOT Lockdrop</span>
+  </a>
+
+  <a href="#"
+    class="text-gray-500 dark:text-darkGray-300 hover:text-gray-700 dark:hover:text-white group flex items-center px-4 py-6 text-sm font-medium">
+    <!-- original icon -->
+    <svg class="text-gray-500 dark:text-darkGray-300 group-hover:text-gray-700 dark:group-hover:text-white h-6 w-6"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="12 8 12 12 15 15" />
+      <polyline stroke="currentColor" stroke-width="2" fill="none" points="4.14 2.5 4.14 7.5 4.72 7.5" />
+      <line stroke="currentColor" stroke-width="2" x1="4.72" y1="7.5" x2="9.14" y2="7.5" />
+      <path stroke="currentColor" stroke-width="2" fill="none" d="M4.21,16.5a9,9,0,1,0,0-9" />
+    </svg>
+    <span class="ml-3 flex-1">History</span>
+  </a>
+
+</nav>
+
+</div>
+
+<div class="flex-shrink-0 p-4 border-t border-gray-200 dark:border-darkGray-600">
+  <div class="flex items-center">
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Twitter
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Telegram
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor"
+        d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Discord
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- original icon -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+      <path fill="currentColor"
+        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+      </path>
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Github
+    </span>
+  </a>
+
+  <a href="#"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative">
+    <!-- Heroicon name: outline/document-text -->
+    <svg class="text-blue-900 dark:text-darkGray-300 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90">
+      Documentation
+    </span>
+  </a>
+
+</div>
+    <div class="flex items-center">
+
+  <button type="button" class="tooltip p-3 rounded-full relative focus:outline-none cursor-default">
+    <!-- Heroicon name: outline/sun -->
+    <svg class="text-blue-900 dark:text-darkGray-100 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Light mode
+    </span>
+  </button>
+
+  <span class="text-gray-300 dark:text-darkGray-500">/</span>
+
+  <button type="button"
+    class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group">
+    <!-- Heroicon name: outline/moon -->
+    <svg
+      class="text-gray-300 dark:text-darkGray-500 h-5 w-5 group-hover:text-blue-900 dark:group-hover:text-darkGray-300"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <!-- Tooltip -->
+    <span
+      class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block opacity-90 whitespace-nowrap">
+      Dark mode
+    </span>
+  </button>
+
+</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+        <div class="flex flex-col w-0 flex-1 overflow-y-auto lg:overflow-hidden">
+
+          <div class="flex justify-between items-center lg:hidden px-4 py-1 sm:py-2 bg-white dark:bg-darkGray-800 shadow">
+
+  <button
+    class="-ml-3 p-2 rounded-full hover:bg-blue-100 dark:hover:bg-darkGray-600 hover:text-gray-900 focus:outline-none focus:ring focus:ring-blue-100 focus:bg-blue-50 group">
+    <span class="sr-only">Open sidebar</span>
+    <!-- Heroicon name: outline/menu -->
+    <svg class="h-6 w-6 text-gray-500 dark:text-darkGray-300 group-hover:text-blue-900"
+      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <div class="flex items-center justify-center">
+    <img class="w-8 h-8 sm:w-10 sm:h-10" src="images/logomark.svg">
+    <svg class="text-blue-500 h-4 sm:h-5 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202 36.05">
+  <path fill="currentColor"
+    d="M0,36.05V.1H29a6.74,6.74,0,0,1,5,2.05h0a6.68,6.68,0,0,1,2,4.9h0v9.7h0a6.68,6.68,0,0,1-2,4.9h0a6.74,6.74,0,0,1-5,2.05h0l-22.25.05L6.6,23.7V36.05Zm29.35-19.3h0V7.05h0A.31.31,0,0,0,29,6.7H7a.31.31,0,0,0-.35.35h0v9.7h0A.31.31,0,0,0,7,17.1H29A.31.31,0,0,0,29.35,16.75ZM75.6,36.05h-36V0h6.6V29.45H75.6Zm10-36h22a6.79,6.79,0,0,1,5,2h0a6.67,6.67,0,0,1,2,4.93h0V36.05H108V24H85.2v12.1H78.6V7h0a6.72,6.72,0,0,1,2-4.93h0A6.72,6.72,0,0,1,85.55.05ZM85.2,7V17.35H108V7h0a.31.31,0,0,0-.35-.35h-22A.31.31,0,0,0,85.2,7Zm70.85,0h0V9.75H149.4V7h0c0-.23-.1-.35-.3-.35H127a.31.31,0,0,0-.35.35h0v7.4h0a.31.31,0,0,0,.35.35h22.1a6.73,6.73,0,0,1,4.9,2h0a6.67,6.67,0,0,1,2.05,4.93h0v7.4h0A6.67,6.67,0,0,1,154,34h0a6.73,6.73,0,0,1-4.9,2H127a6.69,6.69,0,0,1-4.92-2h0a6.72,6.72,0,0,1-2-4.93h0V26.35h6.6V29.1h0a.31.31,0,0,0,.35.35h22.1c.2,0,.3-.12.3-.35h0V21.7h0c0-.23-.1-.35-.3-.35H127a6.7,6.7,0,0,1-4.92-2h0a6.7,6.7,0,0,1-2-4.92h0V7h0a6.72,6.72,0,0,1,2-4.93h0a6.69,6.69,0,0,1,4.92-2h22.1a6.73,6.73,0,0,1,4.9,2h0A6.67,6.67,0,0,1,156.05,7ZM168.6.05l13.1,15.6L194.75.05H202v36h-6.65V9.65L181.7,25.9,168,9.65v26.4h-6.6V.05Z" />
+</svg>
+  </div>
+
+  <button type="button"
+    class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-gray-100 focus:outline-none focus:ring focus:ring-blue-100">
+    <svg class="h-full w-full" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+      <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+      <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+      <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+    </svg>
+  </button>
+
+</div>
+
+            <main class="flex-1 relative z-0 lg:overflow-y-auto overflow-x-hidden focus:outline-none">
+
+
+              <div class="px-4 py-10 md:px-8">
+
+                <div class="flex justify-between">
+                  <h1 class="text-2xl font-extrabold text-blue-900 dark:text-white mb-2">Staking</h1>
+                  <div class="hidden sm:block">
+  <button type="button"
+    class="inline-flex items-center w-full rounded-full border border-gray-300 dark:border-darkGray-600 px-2 py-2 bg-white dark:bg-darkGray-900 text-xs font-medium hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600">
+    <div class="h-8 w-8 rounded-full overflow-hidden border border-gray-100 mr-2">
+      <svg class="h-full w-full" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" fill="#eee" r="32"></circle>
+        <circle cx="32" cy="8" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="32" cy="20" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="11.215390309173472" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="21.607695154586736" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="32" cy="56" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="32" cy="44" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="50" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="44" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="38" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="32" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="52.78460969082653" cy="20" fill="hsl(230, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="26" fill="hsl(90, 93%, 75%)" r="5"></circle>
+        <circle cx="42.392304845413264" cy="14" fill="hsl(320, 93%, 35%)" r="5"></circle>
+        <circle cx="32" cy="32" fill="hsl(151, 93%, 35%)" r="5"></circle>
+      </svg>
+    </div>
+    <div class="text-left">
+      <p class="text-blue-900 dark:text-darkGray-100 font-semibold leading-tight flex justify-between">
+        <span>AddressName</span><span class="ml-2">100PLM</span>
+      </p>
+      <p class="text-xs text-gray-500 dark:text-darkGray-400 font-normal leading-tight">
+        5Hn8MM......2dZzwc
+      </p>
+    </div>
+    <!-- Heroicon name: solid/chevron-down -->
+    <svg class="mr-1 ml-2 h-4 w-4 dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+      fill="currentColor" aria-hidden="true">
+      <path fill-rule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+</div>
+                </div>
+
+                <div class="border-b border-gray-200 dark:border-darkGray-600 mb-6">
+  <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+    <!--
+      Current: "border-blue-500 text-blue-600",
+      Default: "border-transparent text-gray-500 hover:border-gray-300"
+    -->
+    <a href="#"
+      class="border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 whitespace-nowrap py-4 px-1 border-b-2 font-medium"
+      aria-current="page">
+      Validators
+    </a>
+    <a href="#"
+      class="border-transparent text-gray-500 dark:text-darkGray-400 hover:border-gray-300 dark:hover:border-darkGray-500 whitespace-nowrap py-4 px-1 border-b-2 font-normal">
+      dApps
+    </a>
+  </nav>
+</div>
+
+                  <div class="bg-white dark:bg-darkGray-800 shadow rounded-lg sm:flex items-center">
+
+                    <div class="flex items-center pt-4 sm:pt-0">
+                      <div class="px-4 sm:px-6 py-0 sm:py-5">
+                        <div class="relative">
+                          <svg class="w-28 h-28 sm:w-20 sm:h-20" viewBox="0 0 36 36">
+                            <path class="text-gray-100 dark:text-darkGray-700" fill="none" stroke="currentColor"
+                              stroke-width="2.5" d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="text-blue-500" fill="none" stroke-linecap="round" stroke="currentColor"
+                              stroke-width="2.5" stroke-dasharray="75, 100" d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          </svg>
+                          <div
+                            class="font-bold text-blue-500 dark:text-blue-400 absolute text-center top-1/2 -mt-3 w-full">
+                            75%</div>
+                        </div>
+                      </div>
+
+                      <div class="sm:flex py-0 sm:py-3">
+                        <dl class="mr-6">
+                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Stash</dt>
+                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Alice</dd>
+                        </dl>
+                        <dl class="mr-6">
+                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Controller</dt>
+                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Bob</dd>
+                        </dl>
+                        <dl>
+                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Bonded</dt>
+                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">100 PLM</dd>
+                        </dl>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center justify-end pb-2 sm:pb-0 ml-auto">
+                      <div class="">
+                        <button type="button"
+                          class="inline-flex items-center px-6 py-3 border border-transparent rounded-full shadow-sm text-white font-normal bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+                          Stake
+                        </button>
+                      </div>
+
+                      <div class="flex items-center p-1">
+                        <button type="button"
+                          class="p-4 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 group">
+                          <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Dropdown nav -->
+                  <div class="relative">
+                    <div class="absolute z-10 right-0 mt-2">
+                      <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div class="relative grid gap-6 bg-white dark:bg-darkGray-700 py-6 p-6">
+                          <a href="#"
+                            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Bond
+                            more funds</a>
+                          <a href="#"
+                            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Unbond
+                            funds</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ul class="flex flex-wrap mb-2 mt-12">
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-blue-400 p-1 rounded-full mr-1">
+                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Next session</p>
+                    </li>
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-green-400 rounded-full mr-1">
+                        <span
+                          class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">5</span>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Produced blocks</p>
+                    </li>
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-green-400 p-1 rounded-full mr-1">
+                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Online message</p>
+                    </li>
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-green-400 p-0.5 rounded-full mr-1">
+                        <svg class="w-4 h-4 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                            d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z"
+                            clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Nominating</p>
+                    </li>
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-red-400 p-1 rounded-full mr-1">
+                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 211.188 211.188" fill="currentColor">
+                          <path
+                            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+                        </svg>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Oversubscribed</p>
+                    </li>
+                    <li class="flex items-center mr-4 mb-2">
+                      <div class="bg-red-400 p-1 rounded-full mr-1">
+                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512" fill="currentColor">
+                          <path
+                            d="M251.092.049C121.207 2.652 16.552 109.664 16.696 239.575c.083 75.073 34.866 141.875 89.043 185.668v70.062c0 9.22 7.475 16.696 16.696 16.696h33.391c9.22 0 16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696s16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696s16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696h33.391c9.22 0 16.696-7.475 16.696-16.696v-70.062c54.242-43.845 89.043-110.756 89.043-185.938C495.305 105.508 385.502-2.643 251.092.049zM150.261 322.783c-36.883 0-66.783-29.9-66.783-66.783s29.9-66.783 66.783-66.783 66.783 29.9 66.783 66.783-29.9 66.783-66.783 66.783zm150.934 61.891a16.642 16.642 0 01-11.804 4.892 16.643 16.643 0 01-11.805-4.892L256 363.087l-21.587 21.587c-6.521 6.521-17.087 6.521-23.609 0-6.521-6.521-6.521-17.087 0-23.609l33.391-33.391c6.521-6.521 17.087-6.521 23.609 0l33.391 33.391c6.523 6.522 6.523 17.087 0 23.609zm60.544-61.891c-36.883 0-66.783-29.9-66.783-66.783s29.9-66.783 66.783-66.783 66.783 29.9 66.783 66.783-29.9 66.783-66.783 66.783z" />
+                        </svg>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Slashed</p>
+                    </li>
+                  </ul>
+
+                  <div class="relative mb-4">
+                    <input type="text" name="search" placeholder="Filter by name or address..."
+                      class="appearance-none w-full block border border-gray-300 dark:border-darkGray-500 dark:bg-darkGray-800 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md py-2.5 pl-10 pr-2.5 placeholder-gray-300 dark:placeholder-darkGray-500 text-blue-900 dark:text-darkGray-100 focus:outline-none ">
+                    <div class="absolute top-0 left-0 p-3">
+                      <svg class="w-5 h-5 text-gray-500 dark:text-darkGray-400" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col mb-8">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div
+                          class="shadow overflow-hidden border-b border-gray-200 dark:border-darkGray-600 rounded-lg">
+                          <table class="min-w-full divide-y divide-gray-200 dark:divide-darkGray-600">
+                            <thead class="bg-white dark:bg-darkGray-800">
+                              <tr>
+                                <th scope="col"
+                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider text-center">
+                                  Stake
+                                </th>
+                                <th scope="col"
+                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                  Status
+                                </th>
+                                <th scope="col"
+                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                  Name
+                                </th>
+                                <th scope="col"
+                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                  Users
+                                </th>
+                                <th scope="col"
+                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                  Staked Value
+                                </th>
+                                <th scope="col" class="px-3 py-2 sm:px-6 sm:py-4">
+                                  <span class="sr-only">Link</span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="bg-white dark:bg-darkGray-800 divide-y divide-gray-200 dark:divide-darkGray-600">
+                              <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                                <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                                  <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                                    <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                                      <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                                        <tr>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 text-center">
+    <div class="relative w-5 h-5 mx-auto">
+      <input type="checkbox"
+        class="checkbox appearance-none border-2 border-gray-200 dark:border-darkGray-500 w-full h-full rounded focus:outline-none cursor-pointer checked:bg-blue-500 checked:border-transparent focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+      <span class="hidden absolute top-0 left-0 p-0.5 pointer-events-none">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </span>
+    </div>
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap">
+
+    <div class="flex">
+      <div class="bg-blue-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="bg-green-400 rounded-full mr-1">
+        <span class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">4</span>
+      </div>
+
+      <div class="bg-red-400 p-1 rounded-full mr-1">
+        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 211.188 211.188" fill="currentColor">
+          <path
+            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
+        </svg>
+      </div>
+    </div>
+
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    Name
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    12345
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-sm text-blue-900 dark:text-darkGray-100">
+    100 PLM
+  </td>
+  <td class="px-3 py-1 sm:px-6 sm:py-2 whitespace-nowrap text-right leading-none">
+    <a href="#"
+      class="tooltip p-3 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:z-10 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 relative group inline-block">
+      <!-- Heroicon name: outline/document-duplicate -->
+      <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+        <path fill="none" d="M14.36,6h6.4m0,0v6.4m0-6.4-6.4,6.4-3.2-3.2L6.36,14" />
+        <line x1="2.74" y1="4.59" x2="2.74" y2="20.22" />
+        <line x1="18.38" y1="20.22" x2="2.74" y2="20.22" />
+      </svg>
+      <!-- Tooltip -->
+      <span
+        class="pointer-events-none hidden absolute top-0 left-1/2 z-10 transform -translate-y-full -translate-x-1/2 p-2 text-xs leading-tight text-white bg-gray-800 dark:bg-darkGray-500 rounded-md shadow-lg block">
+        Link
+      </span>
+    </a>
+  </td>
+</tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+
+            </main>
+        </div>
+  </div>
+</body>
+
+</html>
