@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Plasm App UI</title>
+  <meta name="description" content="">
+</head>
+
+<body>
+  <div class="h-screen flex overflow-hidden bg-gray-50 dark:bg-darkGray-900">
+
+    <%- include('./components/common/_sidebar-mobile'); -%>
+
+      <%- include('./components/common/_sidebar-desktop'); -%>
+
+
+
+        <div class="flex flex-col w-0 flex-1 overflow-y-auto lg:overflow-hidden">
+
+          <%- include('./components/common/_header-mobile'); -%>
+
+            <main class="flex-1 relative z-0 lg:overflow-y-auto focus:outline-none">
+
+
+              <div class="px-4 py-10 md:px-8">
+
+                <div class="flex justify-between">
+                  <h1 class="text-2xl font-extrabold text-blue-900 dark:text-white mb-2">History</h1>
+                  <%- include('./components/common/_address-change'); -%>
+                </div>
+
+                <h2 class="text-blue-900 dark:text-white text-sm font-bold my-3">September 17, 2020</h2>
+
+                <div class="flex flex-col mb-8">
+                  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                      <div class="shadow overflow-hidden border-b border-gray-200 dark:border-darkGray-600 rounded-lg">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-darkGray-600">
+                          <tbody
+                            class="bg-white dark:bg-darkGray-800 divide-y divide-gray-200 dark:divide-darkGray-600">
+                            <%- include('./components/history/_table-item', {type:'receive'}); -%>
+                              <%- include('./components/history/_table-item', {type:'send'}); -%>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h2 class="text-blue-900 dark:text-white text-sm font-bold my-3">September 17, 2020</h2>
+
+                <div class="flex flex-col mb-8">
+                  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                      <div class="shadow overflow-hidden border-b border-gray-200 dark:border-darkGray-600 rounded-lg">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-darkGray-600">
+                          <tbody
+                            class="bg-white dark:bg-darkGray-800 divide-y divide-gray-200 dark:divide-darkGray-600">
+                            <%- include('./components/history/_table-item', {type:'trade'}); -%>
+                              <%- include('./components/history/_table-item', {type:'claim'}); -%>
+                                <%- include('./components/history/_table-item', {type:'mint'}); -%>
+                                  <%- include('./components/history/_table-item', {type:'burn'}); -%>
+                                    <%- include('./components/history/_table-item', {type:'approve'}); -%>
+                                      <%- include('./components/history/_table-item', {type:'execute'}); -%>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </main>
+        </div>
+  </div>
+</body>
+
+</html>
