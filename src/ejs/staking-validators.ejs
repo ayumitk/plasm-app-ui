@@ -35,200 +35,59 @@
 
                 <%- include('./components/staking/_tab'); -%>
 
-                  <div class="bg-white dark:bg-darkGray-800 shadow rounded-lg sm:flex items-center">
+                  <%- include('./components/staking/_stash-controller', {btn:'Stake'}); -%>
 
-                    <div class="flex items-center pt-4 sm:pt-0">
-                      <div class="px-4 sm:px-6 py-0 sm:py-5">
-                        <div class="relative">
-                          <svg class="w-28 h-28 sm:w-20 sm:h-20" viewBox="0 0 36 36">
-                            <path class="text-gray-100 dark:text-darkGray-700" fill="none" stroke="currentColor"
-                              stroke-width="2.5" d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            <path class="text-blue-500" fill="none" stroke-linecap="round" stroke="currentColor"
-                              stroke-width="2.5" stroke-dasharray="75, 100" d="M18 2.0845
-                              a 15.9155 15.9155 0 0 1 0 31.831
-                              a 15.9155 15.9155 0 0 1 0 -31.831" />
-                          </svg>
-                          <div
-                            class="font-bold text-blue-500 dark:text-blue-400 absolute text-center top-1/2 -mt-3 w-full">
-                            75%</div>
+                    <%- include('./components/staking/_status-example', {btn:'Stake'}); -%>
+
+                      <%- include('./components/staking/_search-form'); -%>
+
+                        <div class="flex flex-col mb-8">
+                          <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                              <div
+                                class="shadow overflow-hidden border-b border-gray-200 dark:border-darkGray-600 rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200 dark:divide-darkGray-600">
+                                  <thead class="bg-white dark:bg-darkGray-800">
+                                    <tr>
+                                      <th scope="col"
+                                        class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider text-center">
+                                        Stake
+                                      </th>
+                                      <th scope="col"
+                                        class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                        Status
+                                      </th>
+                                      <th scope="col"
+                                        class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                        Name
+                                      </th>
+                                      <th scope="col"
+                                        class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                        Users
+                                      </th>
+                                      <th scope="col"
+                                        class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
+                                        Staked Value
+                                      </th>
+                                      <th scope="col" class="px-3 py-2 sm:px-6 sm:py-4">
+                                        <span class="sr-only">Link</span>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody
+                                    class="bg-white dark:bg-darkGray-800 divide-y divide-gray-200 dark:divide-darkGray-600">
+                                    <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                      <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                        <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                          <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                            <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                              <%- include('./components/staking/_table-item', {type:'stake'}); -%>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-
-                      <div class="sm:flex py-0 sm:py-3">
-                        <dl class="mr-6">
-                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Stash</dt>
-                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Alice</dd>
-                        </dl>
-                        <dl class="mr-6">
-                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Controller</dt>
-                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Bob</dd>
-                        </dl>
-                        <dl>
-                          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Bonded</dt>
-                          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">100 PLM</dd>
-                        </dl>
-                      </div>
-                    </div>
-
-                    <div class="flex items-center justify-end pb-2 sm:pb-0 ml-auto">
-                      <div class="">
-                        <button type="button"
-                          class="inline-flex items-center px-6 py-3 border border-transparent rounded-full shadow-sm text-white font-normal bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
-                          Stake
-                        </button>
-                      </div>
-
-                      <div class="flex items-center p-1">
-                        <button type="button"
-                          class="p-4 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 group">
-                          <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <!-- Dropdown nav -->
-                  <div class="relative">
-                    <div class="absolute z-10 right-0 mt-2">
-                      <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                        <div class="relative grid gap-6 bg-white dark:bg-darkGray-700 py-6 p-6">
-                          <a href="#"
-                            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Bond
-                            more funds</a>
-                          <a href="#"
-                            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Unbond
-                            funds</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <ul class="flex flex-wrap mb-2 mt-12">
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-blue-400 p-1 rounded-full mr-1">
-                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
-                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Next session</p>
-                    </li>
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-green-400 rounded-full mr-1">
-                        <span
-                          class="w-5 text-white dark:text-darkGray-900 leading-5 font-extrabold text-xs block text-center">5</span>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Produced blocks</p>
-                    </li>
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-green-400 p-1 rounded-full mr-1">
-                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                        </svg>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Online message</p>
-                    </li>
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-green-400 p-0.5 rounded-full mr-1">
-                        <svg class="w-4 h-4 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd"
-                            d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Nominating</p>
-                    </li>
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-red-400 p-1 rounded-full mr-1">
-                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 211.188 211.188" fill="currentColor">
-                          <path
-                            d="M211.18 86.626a4.985 4.985 0 00-.45-2.328l-32.14-69.553c-.012-.026-.029-.048-.041-.074-.035-.073-.078-.139-.116-.21a4.916 4.916 0 00-.518-.778 5.01 5.01 0 00-.5-.529c-.033-.03-.061-.064-.094-.093a4.976 4.976 0 00-.688-.492c-.071-.043-.145-.079-.218-.119a4.875 4.875 0 00-.583-.267c-.079-.03-.156-.062-.236-.088a4.983 4.983 0 00-.833-.201c-.03-.004-.061-.003-.091-.007a4.92 4.92 0 00-.621-.045c-.058 0-.114.01-.172.012-.086.003-.172.011-.259.019-.246.021-.487.06-.723.116-.045.01-.089.01-.133.021l-57.176 15.228v-5.239c0-5.51-4.482-9.992-9.992-9.992s-9.992 4.482-9.992 9.992v10.562l-59.75 15.913c-.018.005-.032.014-.05.019-.286.08-.563.185-.828.312-.073.035-.139.076-.209.114-.192.104-.377.22-.554.349-.073.053-.146.104-.216.16-.22.178-.43.37-.618.585-.013.014-.022.031-.035.046a4.967 4.967 0 00-.469.656c-.045.075-.084.151-.126.228-.048.089-.104.173-.147.266L.461 120.762a4.989 4.989 0 00-.45 2.234 12.44 12.44 0 00-.011.473c0 19.646 16.661 35.63 37.14 35.63s37.14-15.983 37.14-35.63c0-.127-.004-.253-.008-.379a4.986 4.986 0 00-.45-2.329L44.175 56.607 95.604 42.91v108.106c0 16.417-13.356 29.773-29.773 29.773-7.439 0-13.492 6.052-13.492 13.558a5 5 0 005 5h96.516c2.762 0 5-2.305 5-5.066 0-7.439-6.053-13.492-13.492-13.492-16.417 0-29.773-13.356-29.773-29.773V37.587l49.455-13.171-27.675 59.881a4.993 4.993 0 00-.45 2.235c-.005.158-.01.315-.01.473 0 19.646 16.661 35.63 37.14 35.63s37.14-15.984 37.14-35.63a23.653 23.653 0 00-.01-.379zM12.818 117.859L37.14 65.225l24.323 52.634H12.818zm161.233-89.098l24.322 52.634h-48.646l24.324-52.634z" />
-                        </svg>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Oversubscribed</p>
-                    </li>
-                    <li class="flex items-center mr-4 mb-2">
-                      <div class="bg-red-400 p-1 rounded-full mr-1">
-                        <svg class="w-3 h-3 text-white dark:text-darkGray-900" xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512" fill="currentColor">
-                          <path
-                            d="M251.092.049C121.207 2.652 16.552 109.664 16.696 239.575c.083 75.073 34.866 141.875 89.043 185.668v70.062c0 9.22 7.475 16.696 16.696 16.696h33.391c9.22 0 16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696s16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696s16.696-7.475 16.696-16.696v-32.919c0-8.99 6.909-16.726 15.889-17.149 9.588-.451 17.503 7.188 17.503 16.677v33.391c0 9.22 7.475 16.696 16.696 16.696h33.391c9.22 0 16.696-7.475 16.696-16.696v-70.062c54.242-43.845 89.043-110.756 89.043-185.938C495.305 105.508 385.502-2.643 251.092.049zM150.261 322.783c-36.883 0-66.783-29.9-66.783-66.783s29.9-66.783 66.783-66.783 66.783 29.9 66.783 66.783-29.9 66.783-66.783 66.783zm150.934 61.891a16.642 16.642 0 01-11.804 4.892 16.643 16.643 0 01-11.805-4.892L256 363.087l-21.587 21.587c-6.521 6.521-17.087 6.521-23.609 0-6.521-6.521-6.521-17.087 0-23.609l33.391-33.391c6.521-6.521 17.087-6.521 23.609 0l33.391 33.391c6.523 6.522 6.523 17.087 0 23.609zm60.544-61.891c-36.883 0-66.783-29.9-66.783-66.783s29.9-66.783 66.783-66.783 66.783 29.9 66.783 66.783-29.9 66.783-66.783 66.783z" />
-                        </svg>
-                      </div>
-                      <p class="text-xs text-gray-500 dark:text-darkGray-400">Slashed</p>
-                    </li>
-                  </ul>
-
-                  <div class="relative mb-4">
-                    <input type="text" name="search" placeholder="Filter by name or address..."
-                      class="appearance-none w-full block border border-gray-300 dark:border-darkGray-500 dark:bg-darkGray-800 focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md py-2.5 pl-10 pr-2.5 placeholder-gray-300 dark:placeholder-darkGray-500 text-blue-900 dark:text-darkGray-100 focus:outline-none ">
-                    <div class="absolute top-0 left-0 p-3">
-                      <svg class="w-5 h-5 text-gray-500 dark:text-darkGray-400" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-col mb-8">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div
-                          class="shadow overflow-hidden border-b border-gray-200 dark:border-darkGray-600 rounded-lg">
-                          <table class="min-w-full divide-y divide-gray-200 dark:divide-darkGray-600">
-                            <thead class="bg-white dark:bg-darkGray-800">
-                              <tr>
-                                <th scope="col"
-                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider text-center">
-                                  Stake
-                                </th>
-                                <th scope="col"
-                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
-                                  Status
-                                </th>
-                                <th scope="col"
-                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
-                                  Name
-                                </th>
-                                <th scope="col"
-                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
-                                  Users
-                                </th>
-                                <th scope="col"
-                                  class="px-3 py-2 sm:px-6 sm:py-4 text-left text-xs font-medium text-gray-500 dark:text-darkGray-400 uppercase tracking-wider">
-                                  Staked Value
-                                </th>
-                                <th scope="col" class="px-3 py-2 sm:px-6 sm:py-4">
-                                  <span class="sr-only">Link</span>
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody
-                              class="bg-white dark:bg-darkGray-800 divide-y divide-gray-200 dark:divide-darkGray-600">
-                              <%- include('./components/staking/_table-item'); -%>
-                                <%- include('./components/staking/_table-item'); -%>
-                                  <%- include('./components/staking/_table-item'); -%>
-                                    <%- include('./components/staking/_table-item'); -%>
-                                      <%- include('./components/staking/_table-item'); -%>
-                                        <%- include('./components/staking/_table-item'); -%>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
               </div>
 

@@ -1,0 +1,75 @@
+<div class="mb-12">
+  <div class="bg-white dark:bg-darkGray-800 shadow rounded-lg sm:flex items-center">
+
+    <div class="flex items-center pt-4 sm:pt-0">
+      <div class="px-4 sm:px-6 py-0 sm:py-5">
+        <div class="relative">
+          <svg class="w-28 h-28 sm:w-20 sm:h-20" viewBox="0 0 36 36">
+            <path class="text-gray-100 dark:text-darkGray-700" fill="none" stroke="currentColor" stroke-width="2.5" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="text-blue-500" fill="none" stroke-linecap="round" stroke="currentColor" stroke-width="2.5"
+              stroke-dasharray="75, 100" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <div class="font-bold text-blue-500 dark:text-blue-400 absolute text-center top-1/2 -mt-3 w-full">
+            75%</div>
+        </div>
+      </div>
+
+      <div class="sm:flex py-0 sm:py-3">
+        <dl class="mr-6">
+          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Stash</dt>
+          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Alice</dd>
+        </dl>
+        <dl class="mr-6">
+          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Controller</dt>
+          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">Bob</dd>
+        </dl>
+        <dl>
+          <dt class="text-gray-500 dark:text-darkGray-400 text-xs">Bonded</dt>
+          <dd class="text-blue-900 dark:text-darkGray-100 sm:text-lg font-medium">100 PLM</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-end pb-2 sm:pb-0 ml-auto">
+      <div class="">
+        <button type="button"
+          class="inline-flex items-center px-6 py-3 border border-transparent rounded-full shadow-sm text-white font-normal bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400">
+          <%= btn %>
+        </button>
+      </div>
+
+      <div class="flex items-center p-1">
+        <button type="button"
+          class="p-4 rounded-full hover:bg-gray-100 dark:hover:bg-darkGray-600 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 focus:bg-blue-50 dark:focus:bg-darkGray-900 group">
+          <svg class="text-blue-900 dark:text-darkGray-300 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dropdown nav -->
+  <div class="relative">
+    <div class="absolute z-10 right-0 mt-2">
+      <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+        <div class="relative grid gap-6 bg-white dark:bg-darkGray-700 py-6 p-6">
+          <a href="#"
+            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Bond
+            more funds</a>
+          <a href="#"
+            class="-m-3 p-3 block rounded-md hover:bg-gray-50 dark:hover:bg-darkGray-600 text-sm text-blue-900 dark:text-darkGray-100 whitespace-nowrap">Unbond
+            funds</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
