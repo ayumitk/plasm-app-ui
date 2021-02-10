@@ -1,0 +1,129 @@
+<div class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen">
+
+    <!-- Background overlay -->
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-900 dark:bg-black opacity-75"></div>
+    </div>
+
+    <div
+      class="inline-block align-bottom bg-white dark:bg-darkGray-900 rounded-lg px-4 sm:px-8 py-10 shadow-xl transform transition-all mx-2 my-2 align-middle max-w-lg w-full">
+      <div>
+
+        <div>
+
+          <h3 class="text-lg font-extrabold text-blue-900 dark:text-white mb-6 text-center">
+            <%= label %>
+          </h3>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-500 dark:text-darkGray-400 mb-2">
+              Stash Account
+            </label>
+            <div class="relative">
+              <button type="button"
+                class="relative text-blue-900 dark:text-darkGray-100 w-full bg-white dark:bg-darkGray-900 border border-gray-300 dark:border-darkGray-500 rounded-md shadow-sm pl-3 pr-10 py-3 text-left focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-darkGray-600 hover:bg-gray-50 dark:hover:bg-darkGray-800 cursor-pointer">
+                <span>option</span>
+                <span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <!-- Heroicon name: solid/selector -->
+                  <svg class="h-5 w-5 text-gray-400 dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
+              <!-- Select popover -->
+              <div class="hidden absolute mt-1 w-full rounded-md bg-white dark:bg-darkGray-800 shadow-lg z-10">
+                <ul class="max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-none">
+                  <!-- Select option -->
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                  <li role="option"
+                    class="text-blue-900 dark:text-darkGray-100 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-50 dark:hover:bg-darkGray-700">
+                    option
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-500 dark:text-darkGray-400 mb-2">
+              Controller Account
+            </label>
+            <div class="relative">
+              <button type="button"
+                class="relative text-blue-900 dark:text-darkGray-100 w-full bg-white dark:bg-darkGray-900 border border-gray-300 dark:border-darkGray-500 rounded-md shadow-sm pl-3 pr-10 py-3 text-left focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-darkGray-600 hover:bg-gray-50 dark:hover:bg-darkGray-800 cursor-pointer">
+                <span>option</span>
+                <span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <!-- Heroicon name: solid/selector -->
+                  <svg class="h-5 w-5 text-gray-400 dark:text-darkGray-300" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
+              <!-- Select popover -->
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-500 dark:text-darkGray-400 mb-2">
+              Validators
+            </label>
+            <div
+              class="mt-1 w-full rounded-md bg-white dark:bg-darkGray-900 border border-gray-300 dark:border-darkGray-500">
+              <ul class="max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-none">
+                <!-- Select option -->
+                <%- include('../../components/staking/_modal-account-option'); -%>
+                  <%- include('../../components/staking/_modal-account-option'); -%>
+                    <hr class="border-2 border-gray-200 dark:border-darkGray-600">
+                    <%- include('../../components/staking/_modal-account-option'); -%>
+                      <%- include('../../components/staking/_modal-account-option'); -%>
+                        <%- include('../../components/staking/_modal-account-option'); -%>
+                          <%- include('../../components/staking/_modal-account-option'); -%>
+                            <%- include('../../components/staking/_modal-account-option'); -%>
+                              <%- include('../../components/staking/_modal-account-option'); -%>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-10 flex justify-center flex-row-reverse">
+        <button type="button"
+          class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-100 dark:focus:ring-blue-400 mx-1">
+          <%= label %>
+        </button>
+        <button type="button"
+          class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-darkGray-500 text-sm font-medium rounded-full text-gray-500 dark:text-darkGray-400 bg-white dark:bg-darkGray-900 hover:bg-gray-100 dark:hover:bg-darkGray-700 focus:outline-none focus:ring focus:ring-gray-100 dark:focus:ring-darkGray-600 mx-1">
+          Cancel
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
