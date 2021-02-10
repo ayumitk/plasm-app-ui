@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Plasm App UI</title>
+  <meta name="description" content="">
+</head>
+
+<body>
+  <div class="h-screen flex overflow-hidden bg-gray-50 dark:bg-darkGray-900">
+
+    <%- include('./components/common/_sidebar-mobile'); -%>
+
+      <%- include('./components/common/_sidebar-desktop'); -%>
+
+
+
+        <div class="flex flex-col w-0 flex-1 overflow-y-auto lg:overflow-hidden">
+
+          <%- include('./components/common/_header-mobile'); -%>
+
+            <main class="flex-1 relative z-0 lg:overflow-y-auto overflow-x-hidden focus:outline-none">
+
+
+              <div class="px-4 py-10 md:px-8">
+
+                <div class="flex justify-between">
+                  <h1 class="text-2xl font-extrabold text-blue-900 dark:text-white mb-2">DOT Lockdrop</h1>
+                  <%- include('./components/common/_address-change'); -%>
+                </div>
+
+                <div class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg my-4 sm:flex items-center">
+
+                  <div class="sm:w-1/2 bg-gray-900 px-6 py-10 sm:px-8 sm:py-20" style="
+                    background: url(images/bg-dot-image.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;">
+
+                    <div class="mb-6">
+                      <img src="images/polkadot-plasm.png"
+                        srcset="images/polkadot-plasm.png 1x, images/polkadot-plasm@2x.png 2x" alt="" class="w-full">
+                    </div>
+
+                    <div class="flex justify-between">
+                      <div>
+                        <div class="text-xs text-gray-300 dark:text-darkGray-400">Total deposit DOT</div>
+                        <div class="text-2xl text-white font-light">123.456789</div>
+                      </div>
+                      <div>
+                        <div class="text-xs text-gray-300 dark:text-darkGray-400">Target</div>
+                        <div class="text-2xl text-white font-light">456,789.012345</div>
+                      </div>
+                    </div>
+
+                    <div class="rounded-full relative h-6 my-3" style="background-color: #353B5C;">
+                      <div class="pl-3 h-6 bg-red-300 rounded-full bg-gradient-to-r from-blue-500 to-pink-700"
+                        style="width:70%"></div>
+                      <div class="text-sm text-white font-bold absolute left-3 top-0.5">70%</div>
+                    </div>
+
+                    <div class="opacity-90 ml-10 h-2 w-2" style="border-bottom: 0.25rem solid #fff;
+                    border-right: 0.25rem solid transparent;
+                    border-top: 0.25rem solid transparent;
+                    border-left: 0.25rem solid transparent;"></div>
+                    <div class="flex justify-between bg-white opacity-90 px-4 py-3 sm:px-5 sm:py-4 rounded-md">
+                      <div>
+                        <div class="text-xs text-gray-500 dark:text-darkGray-500">Your deposit</div>
+                        <div class="text-xl text-blue-900 dark:text-darkGray-900">78.901234<span
+                            class="text-base">DOT</span></div>
+                      </div>
+                      <div>
+                        <div class="text-xs text-gray-500 dark:text-darkGray-500">Receive</div>
+                        <div class="text-xl text-blue-900 dark:text-darkGray-900">0000<span class="text-base">PLM</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="sm:w-1/2 px-6 py-10 sm:px-8 sm:py-20">
+
+                    <div class="mb-6">
+                      <label class="block text-sm font-medium text-gray-500 dark:text-darkGray-400 mb-2">
+                        Deposit DOT
+                      </label>
+                      <div class="border border-gray-300 dark:border-darkGray-500 rounded-md relative">
+                        <div class="flex items-center border-b border-gray-300 dark:border-darkGray-500">
+                          <div class="flex-1 pl-4">
+                            <input
+                              class="w-full text-blue-900 dark:text-darkGray-100 text-2xl focus:outline-none bg-transparent placeholder-gray-300 dark:placeholder-darkGray-600"
+                              inputmode="decimal" min="0" pattern="^[0-9]*(\.)?[0-9]*$" placeholder="0.0" value="">
+                          </div>
+                          <div class="text-blue-500 dark:text-darkGray-100 text-lg pl-2 pr-4 py-4">
+                            DOT
+                          </div>
+                        </div>
+                        <div class="text-gray-500 dark:text-darkGray-400 text-lg flex items-center justify-between">
+                          <div class="pl-4">00000000</div>
+                          <div class="pl-2 pr-4 py-4">PLM</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-8">
+                      <label class="block text-sm font-medium text-gray-500 dark:text-darkGray-400 mb-2">
+                        Affiliate
+                      </label>
+                      <input
+                        class="border border-gray-300 dark:border-darkGray-500 rounded-md w-full text-blue-900 dark:text-darkGray-100 focus:outline-none placeholder-gray-300 dark:placeholder-darkGray-600 px-3 py-3 appearance-none bg-white dark:bg-darkGray-800"
+                        placeholder="5E5CdiBL6AcprVDRKBNgwyFCrYjRQ1XteA24aeGGrwo" value="">
+                    </div>
+
+                    <button type="button"
+                      class="items-center px-3 py-3 border border-transparent text-2xl font-light rounded-full shadow-sm text-white bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-400 block max-w-xs w-full text-center mx-auto tracking-wide">
+                      Deposit
+                    </button>
+
+                  </div>
+                </div>
+
+                <div class="bg-yellow-50 shadow rounded-lg p-5 border border-yellow-300">
+                  <div class="flex">
+                    <div class="flex-shrink-0">
+                      <!-- Heroicon name: solid/exclamation -->
+                      <svg class="h-6 w-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div class="ml-3">
+                      <h3 class="font-medium text-yellow-600">
+                        Attention needed
+                      </h3>
+                      <div class="mt-2 text-sm text-yellow-700">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam feugiat, purus in hendrerit
+                          interdum, ligula purus gravida nulla, eu interdum magna odio sit amet felis. Phasellus leo
+                          leo, vestibulum vel urna sed, fringilla malesuada sapien. Mauris lobortis sem at lectus
+                          vulputate tempus. Cras at tempor ipsum. Cras hendrerit bibendum ex, sed interdum eros aliquam
+                          id. Etiam suscipit sem felis, vitae tincidunt orci ultricies et. Integer sed turpis ac est
+                          euismod consequat.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </main>
+        </div>
+  </div>
+</body>
+
+</html>
