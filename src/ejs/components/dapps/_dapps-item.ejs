@@ -1,28 +1,28 @@
 <div class="bg-white dark:bg-darkGray-800 overflow-hidden shadow rounded-lg p-5">
 
-  <div class="mx-auto max-w-xs" style="max-width:12rem;">
+  <div class="w-44 h-16 flex items-center mx-auto my-3">
     <% if (name==='Polkadot.js' ) { %>
-      <img src="images/polkadot-js-500.png" class="w-100" alt="<%= name %>">
+      <img src="images/logo-polkadot-js.png" class="w-full h-full object-scale-down" alt="<%= name %>">
       <% } else if (name==='Subscan' ) { %>
-        <img src="images/subscan-500.png" class="w-100" alt="<%= name %>">
+        <img src="images/logo-subscan.png" class="w-full h-full object-scale-down" alt="<%= name %>">
         <% } else if (name==='MetaMask' ) { %>
-          <img src="images/metamask-500.png" class="w-100" alt="<%= name %>">
+          <img src="images/logo-metamask.png" class="w-full h-full object-scale-down" alt="<%= name %>">
           <% } else if (name==='Chainlink' ) { %>
-            <img src="images/Chainlink-500.png" class="w-100" alt="<%= name %>">
+            <img src="images/logo-chainlink.png" class="w-full h-full object-scale-down" alt="<%= name %>">
             <% } %>
   </div>
 
-  <p class="text-blue-900 dark:text-darkGray-100 text-lg font-bold">
+  <p class="text-blue-900 dark:text-darkGray-100 text-lg font-bold leading-tight mb-1">
     <%= name %>
   </p>
 
-  <p class="text-xs text-gray-500 dark:text-darkGray-400">Web Apps & Browser Extension</p>
+  <p class="text-xs text-gray-500 dark:text-darkGray-400 mb-0.5">Web Apps & Browser Extension</p>
 
-  <div class="mb-2">
-    <a href="#" class="text-blue-500 dark:text-blue-400 hover:text-gray-700 dark:hover:text-gray-300 mr-2 text-xs">
+  <div class="mb-4 text-xs">
+    <a href="#" class="text-blue-500 dark:text-blue-400 hover:text-gray-700 dark:hover:text-gray-300 mr-2">
       #DeFi
     </a>
-    <a href="#" class="text-blue-500 dark:text-blue-400 hover:text-gray-700 dark:hover:text-gray-300 mr-2 text-xs">
+    <a href="#" class="text-blue-500 dark:text-blue-400 hover:text-gray-700 dark:hover:text-gray-300 mr-2">
       #Games
     </a>
   </div>
