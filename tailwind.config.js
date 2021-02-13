@@ -84,6 +84,13 @@ module.exports = {
         900:'#713F12'
       },
     },
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '80': '20rem',
+      '88': '22rem',
+    },
     extend: {},
   },
   variants: {
